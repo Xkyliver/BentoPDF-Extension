@@ -1,0 +1,17 @@
+{
+  "manifest_version": 2,
+  "name": "Bento PDF",
+  "version": "1.2",
+  "description": "Toolkit for PDFs in your Browser.",
+  "icons": {
+    "48": "icon.png" 
+  },
+  "permissions": [
+    "tabs",
+    "activeTab"
+  ],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "Open Toolkit"
+  }
+}
