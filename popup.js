@@ -1,15 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
     
-    // --- DATA ---
+     // --- DATA ---
     const rawToolsData = {
         "Popular Tools": [
-            "PDF Multi Tool", "Merge PDF", "Split PDF", "Compress PDF", 
+            "PDF Workflow Builder", "PDF Multi Tool", "Merge PDF", "Split PDF", "Compress PDF", 
             "PDF Editor", "JPG to PDF", "Sign PDF", "Crop PDF", 
             "Extract Pages", "Duplicate & Organize", "Delete Pages"
         ],
         "Edit & Annotate": [
             "PDF Editor", "Edit Bookmarks", "Table of Contents", "Page Numbers", "Add Watermark",
-            "Header & Footer", "Invert Colors", "Background Color", "Change Text Color", "Sign PDF",
+            "Header & Footer", "Invert Colors", "Scanner Effect", "Adjust Colors", "Background Color", "Change Text Color", "Sign PDF",
             "Add Stamps", "Remove Annotations", "Crop PDF", "PDF Form Filler", 
             "Create PDF Form", "Remove Blank Pages"
         ],
@@ -67,7 +67,8 @@ document.addEventListener('DOMContentLoaded', function() {
         "text to pdf": "txt-to-pdf",
         "duplicate & organize": "organize-pdf", 
         "Digital Signature PDF": "digital-sign-pdf", 
-        "Validate PDF Signature": "validate-signature-pdf"
+        "Validate PDF Signature": "validate-signature-pdf",
+        "pdf workflow builder": "pdf-workflow"
     };
 
     // --- STATE MANAGEMENT ---
