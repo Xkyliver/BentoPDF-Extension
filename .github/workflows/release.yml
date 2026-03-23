@@ -1,0 +1,61 @@
+name: Build & Release
+
+on:
+  push:
+    tags:
+      - 'v*'   # Triggers on tags like v1.0.0, v2.1.3, etc.
+
+permissions:
+  contents: write  # Needed to create GitHub Releases
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Full history needed for changelog generation
+
+      - name: Get previous tag
+        id: prev_tag
+        run: |
+          PREV=$(git tag --sort=-version:refname | sed -n '2p')
+          echo "tag=${PREV}" >> $GITHUB_OUTPUT
+
+      - name: Generate changelog from commits
+        id: changelog
+        run: |
+          PREV="${{ steps.prev_tag.outputs.tag }}"
+          if [ -z "$PREV" ]; then
+            # First release — include all commits
+            LOG=$(git log --pretty=format:"- %s" HEAD)
+          else
+            # Diff between previous tag and this one
+            LOG=$(git log --pretty=format:"- %s" "$PREV"..HEAD)
+          fi
+          echo "CHANGELOG<<EOF" >> $GITHUB_OUTPUT
+          echo "$LOG" >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Package static files into ZIP
+        run: |
+          zip -r release.zip . \
+            --exclude "*.git*" \
+            --exclude ".github/*" \
+            --exclude "*.md" \
+            --exclude "node_modules/*"
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: ${{ github.ref_name }}
+          name: "Release ${{ github.ref_name }}"
+          body: |
+            ## 🗒️ What's Changed
+            ${{ steps.changelog.outputs.CHANGELOG }}
+
+            ---
+            📦 Download `release.zip` below to get the latest build.
+          files: release.zip
