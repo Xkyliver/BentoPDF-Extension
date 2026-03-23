@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
             "Extract Pages", "Duplicate & Organize", "Delete Pages"
         ],
         "Edit & Annotate": [
-            "PDF Editor", "Edit Bookmarks", "Table of Contents", "Page Numbers", "Add Watermark",
+            "PDF Editor", "Edit Bookmarks", "Table of Contents", "Page Numbers", "Add Page Labels", "Bates Numbering", "Add Watermark",
             "Header & Footer", "Invert Colors", "Scanner Effect", "Adjust Colors", "Background Color", "Change Text Color", "Sign PDF",
             "Add Stamps", "Remove Annotations", "Crop PDF", "PDF Form Filler", 
             "Create PDF Form", "Remove Blank Pages"
