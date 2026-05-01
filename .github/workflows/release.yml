@@ -57,5 +57,5 @@ jobs:
             ${{ steps.changelog.outputs.CHANGELOG }}
 
             ---
-            📦 Download `release.zip` below to get the latest build.
-          files: release.zip
+            📦 Download `BentoPDFExtension.zip` below to get the latest build.
+          files: BentoPDFExtension.zip
