@@ -25,12 +25,12 @@ document.addEventListener('DOMContentLoaded', function() {
         ],
         "Convert from PDF": [
             "PDF to JPG", "PDF to PNG", "PDF to WebP", "PDF to BMP", 
-            "PDF to TIFF", "PDF to SVG", "PDF to CSV", "PDF to Excel",
+            "PDF to TIFF", "PDF to CBZ","PDF to SVG", "PDF to CSV", "PDF to Excel",
             "PDF to Greyscale", "PDF to JSON", "PDF to Word", "Extract Images",
             "PDF to Markdown", "Prepare PDF for AI", "PDF to Text"
         ],
         "Organize & Manage": [
-            "OCR PDF", "Merge PDF", "Altemate & Mix Pages", "Duplicate & Organize", 
+            "OCR PDF", "Merge PDF", "Altemate & Mix Pages", "Duplicate & Organize", "PDF Overlay",
             "Add Attachments", "Extract Attachments", "Edit Attachments", 
             "PDF Multi Tool", "PDF OCG", "Extract Tables", "Split PDF", "Divide Pages", "Extract Pages", 
             "Delete Pages", "Add Blank Page", "Reverse Pages", "Rotate PDF", "Rotate by Custom Degrees",
@@ -50,6 +50,7 @@ document.addEventListener('DOMContentLoaded', function() {
     // --- MAPPINGS ---
     const urlOverrides = {
         "pdf editor": "edit-pdf",
+        "pdf overlay": "overlay-pdf",
         "pdf to word": "pdf-to-docx",
         "pdf ocg": "pdf-layers",
         "pdf to pdf/a": "pdf-to-pdfa",
